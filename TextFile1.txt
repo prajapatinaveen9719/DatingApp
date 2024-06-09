@@ -1,0 +1,30 @@
+Create a solution file
+
+Add a asp.net core api project into the solution
+  Add  a folder named Entities in api project 
+  Add a class AppUser in entities folder
+  Add two property Id and UserName
+
+Create a new folder name Data 
+   Create a class DataContext for handling the connection with database
+   inherit the classs from DbContext 
+   install nuget package Microsoft.EntityFrameworkCore
+   add Dbset of your AppUser class
+
+   Add-Migration: When using the Package Manager Console (PMC)
+dotnet ef migrations add: When using the .NET Command Line Interface (.NET CLI)
+
+dotnet ef migrations add InitialCreate -o Data/Migrations --project "M:\Project\DatingApp\DatingApp\API\API.csproj"
+dotnet ef database update  --project "M:\Project\DatingApp\DatingApp\API\API.csproj"
+
+intergrated Security true if you are using Windows Authentication
+
+***************************User Controller***********************
+create  a Api controller  inherited from Controller BAse class and decorated with ApiController Attribute 
+
+Create a action method for returning the user list
+IEnumerable ---provide the simple iteration
+List--provide the method for sort, search and iteration and manipultes list
+
+Create an action methoid for return the user by id
+
